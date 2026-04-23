@@ -57,6 +57,16 @@ return {
                 filetypes = { "css", "scss", "less" },
                 root_markers = { "package.json", ".git" },
             },
+            rust_analyzer = {
+                cmd = { "rust-analyzer" },
+                filetypes = { "rust" },
+                root_markers = { "Cargo.toml", ".git" },
+                settings = {
+                    ["rust-analyzer"] = {
+                        check = { command = "clippy" },
+                    },
+                },
+            },
         }
 
         vim.lsp.config("*", { capabilities = capabilities })
@@ -65,7 +75,7 @@ return {
             vim.lsp.config(name, config)
         end
 
-        vim.lsp.enable({ "lua_ls", "clangd", "pyright", "ts_ls", "html", "cssls" })
+        vim.lsp.enable({ "lua_ls", "clangd", "pyright", "ts_ls", "html", "cssls", "rust_analyzer" })
 
         local group = vim.api.nvim_create_augroup("user-lsp-attach", { clear = true })
         vim.api.nvim_create_autocmd("LspAttach", {

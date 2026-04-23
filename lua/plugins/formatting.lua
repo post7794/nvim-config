@@ -16,6 +16,7 @@ return {
                     "clang-format",
                     "black",
                     "prettier",
+                    "rust-analyzer",
                 },
             })
         end
@@ -36,6 +37,7 @@ return {
                     javascript = { "prettier" },
                     html = { "prettier" },
                     css = { "prettier" },
+                    rust = { "rustfmt" },
                 },
             })
 

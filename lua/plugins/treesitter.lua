@@ -18,6 +18,7 @@ return {
                 "css",
                 "markdown",
                 "markdown_inline",
+                "rust",
             },
         })
 

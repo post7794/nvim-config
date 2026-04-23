@@ -25,6 +25,7 @@
 | [oil.nvim](https://github.com/stevearc/oil.nvim) | 文件管理器 |
 | [rainbow-delimiters](https://github.com/HiPhish/rainbow-delimiters.nvim) | 彩虹括号 |
 | [render-markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Markdown 渲染 |
+| [rustaceanvim](https://github.com/mrcjkb/rustaceanvim) | Rust 增强 |
 | [snacks.nvim](https://github.com/folke/snacks.nvim) | Dashboard / 大文件 / 快速打开 |
 | [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | 终端 |
 | [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | 语法高亮 |
@@ -97,6 +98,19 @@ Leader 键：`Space`
 | `[d` | Normal | 上一个诊断 |
 | `]d` | Normal | 下一个诊断 |
 
+### Rust（仅 .rs 文件生效）
+
+| 快捷键 | 模式 | 功能 |
+|--------|------|------|
+| `Space+rr` | Normal | 运行 target |
+| `Space+rd` | Normal | 调试 target |
+| `Space+rh` | Normal | 悬停操作（类型/run/doctest） |
+| `Space+re` | Normal | 展开宏 |
+| `Space+ro` | Normal | 打开 Cargo.toml |
+| `Space+rp` | Normal | 跳转到父模块 |
+| `Space+rc` | Normal | Crate 依赖图 |
+| `Space+rs` | Normal | 结构化搜索替换 |
+
 ### 代码折叠
 
 | 快捷键 | 模式 | 功能 |
@@ -164,6 +178,7 @@ Leader 键：`Space`
 - **ts_ls** — TypeScript / JavaScript
 - **html** — HTML
 - **cssls** — CSS
+- **rust_analyzer** — Rust
 
 ## 格式化工具
 
@@ -171,3 +186,4 @@ Leader 键：`Space`
 - **clang-format** — C / C++
 - **black** — Python
 - **prettier** — JavaScript / HTML / CSS
+- **rustfmt** — Rust
