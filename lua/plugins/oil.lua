@@ -32,8 +32,13 @@ return {
                     if not dir then
                         return
                     end
-                    vim.cmd.wincmd("p")
-                    vim.cmd.edit(vim.fn.fnameescape(dir .. entry.name))
+                    -- Open file in the adjacent window but keep cursor in oil
+                    local oil_win = vim.api.nvim_get_current_win()
+                    vim.cmd.wincmd("l")
+                    if vim.api.nvim_get_current_win() ~= oil_win then
+                        vim.cmd.edit(vim.fn.fnameescape(dir .. entry.name))
+                        vim.fn.win_gotoid(oil_win)
+                    end
                 end,
             },
         })
