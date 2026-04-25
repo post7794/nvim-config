@@ -134,7 +134,7 @@ Leader 键：`Space`
 | `Space+re` | Normal | 展开宏 |
 | `Space+ro` | Normal | 打开 Cargo.toml |
 | `Space+rp` | Normal | 跳转到父模块 |
-| `Space+rc` | Normal | 打开 Cargo.toml |
+| `Space+rc` | Normal | Crate 依赖图 |
 | `Space+rs` | Normal | 结构化搜索替换 |
 
 ### 代码折叠
@@ -178,6 +178,7 @@ Leader 键：`Space`
 
 | 快捷键 | 功能 |
 |--------|------|
+| `Space+e` | 打开/切换侧边栏 |
 | `Ctrl+s` | 垂直分屏打开文件 |
 | `Enter` | 目录则进入，文件则在编辑区打开 |
 | `q` | 关闭侧边栏 |
