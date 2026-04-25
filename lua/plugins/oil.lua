@@ -43,22 +43,20 @@ return {
             },
         })
 
-        local oil_buf = nil
-
         vim.keymap.set("n", "<leader>e", function()
-            if oil_buf and vim.api.nvim_buf_is_valid(oil_buf) and #vim.fn.win_findbuf(oil_buf) > 0 then
-                local oil_win = vim.fn.win_findbuf(oil_buf)[1]
-                if vim.api.nvim_get_current_win() == oil_win then
-                    vim.cmd.wincmd("p")
-                else
-                    vim.fn.win_gotoid(oil_win)
+            for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+                if vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "oil" then
+                    if vim.api.nvim_get_current_win() == win then
+                        vim.cmd.wincmd("p")
+                    else
+                        vim.fn.win_gotoid(win)
+                    end
+                    return
                 end
-                return
             end
             vim.cmd("leftabove vsplit")
             vim.cmd("vertical resize 25")
             require("oil").open()
-            oil_buf = vim.api.nvim_get_current_buf()
         end, { desc = "Open Oil File Manager", silent = true })
     end,
 }
