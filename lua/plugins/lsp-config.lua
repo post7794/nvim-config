@@ -5,6 +5,23 @@ return {
     config = function(_, opts)
         require("mason").setup(opts)
 
+        vim.diagnostic.config({
+            virtual_text = {
+                prefix = "●",
+                source = "if_many",
+            },
+            signs = true,
+            underline = true,
+            update_in_insert = true,
+            severity_sort = true,
+            float = {
+                border = "rounded",
+                source = "if_many",
+                header = "",
+                prefix = "",
+            },
+        })
+
         local capabilities = require("blink.cmp").get_lsp_capabilities()
         local servers = {
             lua_ls = {
