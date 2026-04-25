@@ -1,6 +1,29 @@
 # Neovim 配置
 
-基于 [lazy.nvim](https://github.com/folke/lazy.nvim) 的 Neovim 配置，使用 Catppuccin Mocha 主题。
+基于 [lazy.nvim](https://github.com/folke/lazy.nvim) 的 Neovim 配置，使用 Kanagawa Wave 主题。
+
+## 前提条件
+
+- [Neovim](https://neovim.io/) >= 0.10
+- [Git](https://git-scm.com/)
+- C 编译器（`gcc`）
+- [Node.js](https://nodejs.org/) + npm（pyright、typescript-language-server、prettier 等需要）
+- [Python](https://www.python.org/)（pyright、black 需要）
+- [Go](https://go.dev/)（部分 LSP 可能需要）
+- `unzip`（Mason 解压下载包需要）
+
+Arch Linux 一键安装：
+```bash
+pacman -S neovim git gcc nodejs npm python unzip go
+```
+
+## 安装
+
+```bash
+git clone https://github.com/post7794/nvim-config.git ~/.config/nvim
+```
+
+首次启动 nvim 时插件会自动安装。
 
 ## 插件列表
 
@@ -8,21 +31,24 @@
 |------|------|
 | [blink.cmp](https://github.com/saghen/blink.cmp) | 自动补全 |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | Buffer 标签栏 |
-| [catppuccin](https://github.com/catppuccin/nvim) | 主题 |
-| [colorizer](https://github.com/norcalli/nvim-colorizer.lua) | 颜色代码高亮 |
+| [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) | 主题 |
+| [colorizer](https://github.com/catgoose/nvim-colorizer.lua) | 颜色代码高亮 |
 | [conform.nvim](https://github.com/stevearc/conform.nvim) | 代码格式化 |
 | [fidget.nvim](https://github.com/j-hui/fidget.nvim) | LSP 进度动画 |
+| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) | 代码片段集合 |
 | [fzf-lua](https://github.com/ibhagwan/fzf-lua) | 模糊查找 |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git 标记 |
 | [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim) | 缩进线 |
 | [lazy.nvim](https://github.com/folke/lazy.nvim) | 插件管理 |
 | [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | 状态栏 |
 | [mason.nvim](https://github.com/mason-org/mason.nvim) | LSP/格式化工具管理 |
+| [mason-tool-installer.nvim](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim) | Mason 工具自动安装 |
 | [mini.nvim](https://github.com/nvim-mini/mini.nvim) | 自动配对 / 环绕 / 注释 / 缩进作用域 |
 | [noice.nvim](https://github.com/folke/noice.nvim) | 命令行/通知 UI 美化 |
 | [nvim-notify](https://github.com/rcarriga/nvim-notify) | 通知弹窗 |
 | [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) | 代码折叠 |
 | [oil.nvim](https://github.com/stevearc/oil.nvim) | 文件管理器 |
+| [promise-async](https://github.com/kevinhwang91/promise-async) | 异步支持（nvim-ufo 依赖） |
 | [rainbow-delimiters](https://github.com/HiPhish/rainbow-delimiters.nvim) | 彩虹括号 |
 | [render-markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim) | Markdown 渲染 |
 | [rustaceanvim](https://github.com/mrcjkb/rustaceanvim) | Rust 增强 |
@@ -108,7 +134,7 @@ Leader 键：`Space`
 | `Space+re` | Normal | 展开宏 |
 | `Space+ro` | Normal | 打开 Cargo.toml |
 | `Space+rp` | Normal | 跳转到父模块 |
-| `Space+rc` | Normal | Crate 依赖图 |
+| `Space+rc` | Normal | 打开 Cargo.toml |
 | `Space+rs` | Normal | 结构化搜索替换 |
 
 ### 代码折叠
@@ -156,7 +182,8 @@ Leader 键：`Space`
 | `Enter` | 目录则进入，文件则在编辑区打开 |
 | `q` | 关闭侧边栏 |
 | `-` | 返回上级目录 |
-| `g.` | 切换隐藏文件 |
+
+> 隐藏文件默认始终显示。
 
 ### Dashboard 启动页
 
