@@ -25,15 +25,17 @@ return {
 
             sources = {
                 default = { "lsp", "path", "snippets", "buffer" },
+                providers = {
+                    lsp = {
+                        name = "LSP",
+                        module = "blink.cmp.sources.lsp",
+                        fallbacks = {},
+                    },
+                },
             },
 
             fuzzy = { implementation = "prefer_rust_with_warning" }
         })
-
-        -- All presets have the following mappings:
-        -- C-space: Open menu or open docs if already open
-        -- C-e: Hide menu
-        -- C-k: Toggle signature help (if signature.enabled = true)
     end,
 
     opts_extend = { "sources.default" }

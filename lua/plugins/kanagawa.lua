@@ -5,7 +5,7 @@ return {
 
     config = function()
         require("kanagawa").setup({
-            transparent = true,
+            transparent = false,
         })
         vim.cmd.colorscheme("kanagawa-wave")
     end
