@@ -8,6 +8,7 @@ opt.undofile = true
 
 -- Line numbers
 opt.number = true                   -- Display line numbers
+opt.relativenumber = true            -- Display relative line numbers
 opt.numberwidth = 2                 -- Set min number column width
 
 -- Display and UI
