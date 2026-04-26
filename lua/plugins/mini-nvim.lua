@@ -9,6 +9,10 @@ return {
         -- Surround
         local surround = require("mini.surround")
         surround.setup({})
+        -- Move lines/selection (normal & visual: Alt+hjkl)
+        local move = require("mini.move")
+        move.setup({})
+
 
         -- Indent scope animation
         local indentscope = require("mini.indentscope")

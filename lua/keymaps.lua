@@ -24,9 +24,6 @@ keymap("n", "<C-J>", "<C-w>j", { desc = "Move To Bottom Pane" })    -- Ctrl j
 keymap("n", "<C-H>", "<C-w>h", { desc = "Move To Left Pane" })      -- Ctrl h
 keymap("n", "<C-L>", "<C-w>l", { desc = "Move To Right Pane" })     -- Ctrl l
 
--- Set move line
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move Line(s) Up (Visual mode)", silent = true })        -- Alt k
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move Line(s) Down (Visual mode)", silent = true })    -- Alt j
 
 -- Buffer navigation
 keymap("n", "<leader>bh", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Previous Buffer", silent = true })
