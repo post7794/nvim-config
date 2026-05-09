@@ -8,7 +8,15 @@ return {
 
         -- Surround
         local surround = require("mini.surround")
-        surround.setup({})
+        surround.setup({
+            mappings = {
+                add = "ys",
+                delete = "ds",
+                replace = "cs",
+                find = "ysf",
+                find_left = "ysF",
+            },
+        })
         -- Move lines/selection (normal & visual: Alt+hjkl)
         local move = require("mini.move")
         move.setup({})
