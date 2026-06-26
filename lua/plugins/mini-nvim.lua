@@ -31,6 +31,14 @@ return {
             symbol = "▏",
         })
 
+        -- Jump to any visible position
+        local jump2d = require("mini.jump2d")
+        jump2d.setup({
+            mappings = {
+                start_jumping = "s",
+            },
+        })
+
         -- Comment code
         local comment = require("mini.comment")
         comment.setup({
