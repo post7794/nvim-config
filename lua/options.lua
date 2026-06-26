@@ -35,21 +35,17 @@ opt.shiftwidth = 4
 -- Set color
 opt.termguicolors = true
 
--- WSL clipboard support
-if vim.fn.has("wsl") == 1 then
-    vim.g.clipboard = {
-        name = "win32yank",
-        copy = {
-            ["+"] = "win32yank.exe -i --crlf",
-            ["*"] = "win32yank.exe -i --crlf",
-        },
-        paste = {
-            ["+"] = "win32yank.exe -o --lf",
-            ["*"] = "win32yank.exe -o --lf",
-        },
-        cache_enabled = true,
-    }
-end
-
--- Sync clipboard between OS and Neovim.
+-- Clipboard: OSC 52 for copy (instant), win32yank for paste (WT doesn't support OSC 52 read)
+vim.g.clipboard = {
+    name = "OSC 52 + win32yank",
+    copy = {
+        ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+        ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+        ["+"] = "win32yank.exe -o --lf",
+        ["*"] = "win32yank.exe -o --lf",
+    },
+    cache_enabled = true,
+}
 opt.clipboard = "unnamedplus"
